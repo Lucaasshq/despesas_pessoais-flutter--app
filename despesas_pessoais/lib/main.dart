@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Card(
-            elevation: 10,
+            elevation: 5,
             child: Text('Lista de Transações')
             ,
           )
