@@ -1,5 +1,6 @@
 import 'package:despesas_pessoais/models/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 main() => runApp(const ExpensesApp());
 
@@ -11,6 +12,8 @@ class ExpensesApp extends StatelessWidget {
     return MaterialApp(home: MyHomePage());
   }
 }
+
+void botaooff() {}
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
@@ -26,7 +29,13 @@ class MyHomePage extends StatelessWidget {
       title: 'Conta de Luz',
       value: 211.30,
       date: DateTime.now(),
-    )
+    ),
+    Transaction(
+      id: 't3',
+      title: 'Conta de agua',
+      value: 78.25,
+      date: DateTime.now(),
+    ),
   ];
 
   @override
@@ -37,18 +46,18 @@ class MyHomePage extends StatelessWidget {
         title: const Text(
           'Despesas Pessoais',
           style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-              fontWeight: FontWeight.bold),
+            color: Color.fromARGB(255, 255, 255, 255),
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           const SizedBox(
             width: double.infinity,
             child: Card(
-              color: Colors.blue,
+              color: Color(0xFFdac9df),
               elevation: 5,
               child: Text('Gráfico'),
             ),
@@ -60,33 +69,77 @@ class MyHomePage extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       margin: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 10),
+                        horizontal: 15,
+                        vertical: 10,
+                      ),
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: Colors.purple,
-                          width: 2
+                          width: 2,
                         ),
                       ),
                       padding: const EdgeInsets.all(10),
                       child: Text(
-                        tr.value.toString(),
+                        'R\$ ${tr.value.toStringAsFixed(2)}',
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.purple
-                        ),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.purple),
                       ),
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(tr.title),
-                        Text(tr.date.toString()),
+                        Text(
+                          tr.title,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          DateFormat('d MMM y').format(tr.date),
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                          ),
+                        ),
                       ],
                     )
                   ],
                 ),
               );
             }).toList(),
+          ),
+          const Card(
+            elevation: 5,
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Título',
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Valor (R\$)',
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      TextButton(
+                        onPressed: botaooff, //?Função vazia
+                        child: Text(
+                          'Nova Transação',
+                          style: TextStyle(
+                          color: Colors.purple,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           )
         ],
       ),
