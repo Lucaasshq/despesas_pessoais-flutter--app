@@ -17,6 +17,10 @@ void botaooff() {}
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
+
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
+
   final _transactions = [
     Transaction(
       id: 't1',
@@ -107,19 +111,21 @@ class MyHomePage extends StatelessWidget {
               );
             }).toList(),
           ),
-          const Card(
+          Card(
             elevation: 5,
             child: Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
                   TextField(
-                    decoration: InputDecoration(
+                    controller: titleController,
+                    decoration: const InputDecoration(
                       labelText: 'Título',
                     ),
                   ),
                   TextField(
-                    decoration: InputDecoration(
+                    controller: valueController,
+                    decoration: const InputDecoration(
                       labelText: 'Valor (R\$)',
                     ),
                   ),
@@ -127,11 +133,14 @@ class MyHomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       TextButton(
-                        onPressed: botaooff, //?Função vazia
-                        child: Text(
+                        onPressed: () => {
+                          debugPrint(titleController.text),
+                          debugPrint(valueController.text)
+                        }, //?Função vazia
+                        child: const Text(
                           'Nova Transação',
                           style: TextStyle(
-                          color: Colors.purple,
+                            color: Colors.purple,
                           ),
                         ),
                       ),
