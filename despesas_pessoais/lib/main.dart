@@ -1,8 +1,6 @@
 
 import 'package:despesas_pessoais/components/transaction_user.dart';
 import 'package:flutter/material.dart';
-import './components/transaction_list.dart';
-import './components/transaction_form.dart';
 
 main() => runApp(const ExpensesApp());
 
@@ -11,14 +9,14 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    return const MaterialApp(home: MyHomePage());
   }
 }
 
 void botaooff() {}
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key});
+  const MyHomePage({super.key});
 
 
 
@@ -46,7 +44,7 @@ class MyHomePage extends StatelessWidget {
               child: Text('Gráfico'),
             ),
           ),
-          /* TransactionUser() */
+          TransactionUser()
         ],
       ),
     );
