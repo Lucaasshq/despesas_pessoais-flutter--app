@@ -1,4 +1,5 @@
 
+import 'package:despesas_pessoais/components/transaction_user.dart';
 import 'package:flutter/material.dart';
 import './components/transaction_list.dart';
 import './components/transaction_form.dart';
@@ -34,10 +35,10 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
+      body: const Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          const SizedBox(
+           SizedBox(
             width: double.infinity,
             child: Card(
               color: Color(0xFFdac9df),
@@ -45,8 +46,7 @@ class MyHomePage extends StatelessWidget {
               child: Text('Gráfico'),
             ),
           ),
-          TransactionsList(transactions: _transactions),
-          TransactionForm(),
+          /* TransactionUser() */
         ],
       ),
     );
