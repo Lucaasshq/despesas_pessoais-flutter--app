@@ -11,6 +11,7 @@ class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -32,7 +33,11 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
         actions: <Widget>[
-          IconButton(onPressed: onPressed, icon:  Icon(Icons.add))
+          IconButton(
+            onPressed: () => {},
+            icon: const Icon(Icons.add),
+            color: Colors.white,
+          )
         ],
       ),
       body: const SingleChildScrollView(
@@ -51,6 +56,13 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
+        backgroundColor: const Color.fromARGB(206, 223, 201, 255),
+        onPressed: () {  },
+        child: const Icon(Icons.add)
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
     );
   }
 }
