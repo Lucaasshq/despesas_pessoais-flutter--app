@@ -31,6 +31,9 @@ class MyHomePage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: <Widget>[
+          IconButton(onPressed: onPressed, icon:  Icon(Icons.add))
+        ],
       ),
       body: const SingleChildScrollView(
         child: Column(
