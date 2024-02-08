@@ -4,16 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:despesas_pessoais/models/transaction.dart';
 import 'dart:math';
 
-main() => runApp(const ExpensesApp());
+main() => runApp(ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
-  const ExpensesApp({super.key});
+  ExpensesApp({super.key});
+  final ThemeData tema = ThemeData();
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: const MyHomePage(),
+      theme: tema.copyWith(),
     );
   }
 }
@@ -52,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       transactions.add(newTrasaction);
     });
 
-    Navigator.of(context).pop();
+    Navigator.of(context).pop(); //? Fecha o formulario após preencher modal
   }
 
   _openTransactionFormModal(BuildContext context) {
