@@ -12,10 +12,10 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
-      theme: tema.copyWith(),
+      home: MyHomePage(),
+      
     );
   }
 }
@@ -69,11 +69,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 124, 33, 243),
+         backgroundColor: const Color.fromARGB(255, 124, 33, 243), 
         title: const Text(
           'Despesas Pessoais',
           style: TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
+             color: Color.fromARGB(255, 255, 255, 255), 
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             onPressed: () => _openTransactionFormModal(context),
             icon: const Icon(Icons.add),
-            color: Colors.white,
+             color: Colors.white,
           )
         ],
       ),
@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               width: double.infinity,
               child: Card(
-                color: Color(0xFFdac9df),
+                 color: Color(0xFFdac9df), 
                 elevation: 5,
                 child: Text('Gráfico'),
               ),
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
           shape: const CircleBorder(),
-          backgroundColor: const Color.fromARGB(206, 223, 201, 255),
+           backgroundColor: const Color.fromARGB(206, 223, 201, 255), 
           onPressed: () => _openTransactionFormModal(context),
           child: const Icon(Icons.add)),
       floatingActionButtonLocation:
@@ -111,3 +111,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
