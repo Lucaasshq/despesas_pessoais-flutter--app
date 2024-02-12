@@ -34,7 +34,7 @@ class TransactionsList extends StatelessWidget {
                     style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                         color: Colors.purple),
+                        color: Colors.purple),
                   ),
                 ),
                 Column(
@@ -46,8 +46,8 @@ class TransactionsList extends StatelessWidget {
                     ),
                     Text(
                       DateFormat('d MMM y').format(tr.date),
-                      style: const TextStyle(
-                        /* color: Colors.grey[600], */
+                      style: TextStyle(
+                        color: Colors.grey[600],
                       ),
                     ),
                   ],
