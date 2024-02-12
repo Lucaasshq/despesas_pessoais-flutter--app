@@ -21,7 +21,6 @@ class ExpensesApp extends StatelessWidget {
         ),
         textTheme: tema.textTheme.copyWith(
           titleLarge: const TextStyle(
-            fontFamily: 'OpenSans',
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -29,7 +28,6 @@ class ExpensesApp extends StatelessWidget {
         ),
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
-            fontFamily: 'OpenSans',
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -92,9 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text(
           'Despesas Pessoais',
           style: TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
-            fontWeight: FontWeight.bold,
-          ),
+              color: Color.fromARGB(255, 255, 255, 255),),
         ),
         actions: <Widget>[
           IconButton(
