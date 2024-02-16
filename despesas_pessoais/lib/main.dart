@@ -15,14 +15,16 @@ class ExpensesApp extends StatelessWidget {
     return MaterialApp(
       home: const MyHomePage(),
       theme: ThemeData(
+        useMaterial3: true,
         colorScheme: tema.colorScheme.copyWith(
           primary: Colors.purple,
           secondary: Colors.amber,
         ),
         textTheme: tema.textTheme.copyWith(
           titleLarge: const TextStyle(
+            fontFamily: 'OpenSans',
             fontSize: 18,
-            fontWeight: FontWeight.bold,
+            
             color: Colors.black,
           ),
         ),
@@ -90,7 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text(
           'Despesas Pessoais',
           style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),),
+              /* fontFamily: 'OpenSans' */
+              ),
         ),
         actions: <Widget>[
           IconButton(
@@ -109,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Card(
                 color: Color(0xFFdac9df),
                 elevation: 5,
-                child: Text('Gráfico'),
+                child: Text('Grafico'),
               ),
             ),
             TransactionsList(transactions: transactions),
@@ -118,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
           shape: const CircleBorder(),
-          backgroundColor: const Color.fromARGB(206, 223, 201, 255),
+          backgroundColor: Theme.of(context).colorScheme.secondary,
           onPressed: () => _openTransactionFormModal(context),
           child: const Icon(Icons.add)),
       floatingActionButtonLocation:
