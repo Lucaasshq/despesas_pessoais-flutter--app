@@ -24,7 +24,6 @@ class ExpensesApp extends StatelessWidget {
           titleLarge: const TextStyle(
             fontFamily: 'OpenSans',
             fontSize: 18,
-            
             color: Colors.black,
           ),
         ),
@@ -32,6 +31,7 @@ class ExpensesApp extends StatelessWidget {
           titleTextStyle: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
+            
           ),
         ),
       ),
@@ -47,8 +47,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final transactions = [
-    Transaction(
+  final List<Transaction> transactions = [
+    /* Transaction(
       id: 't1',
       title: 'Novo Tênis de corrida',
       value: 310.76,
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       title: 'Conta de Luz',
       value: 211.30,
       date: DateTime.now(),
-    )
+    ) */
   ];
 
   _addTransaction(String title, double value) {
