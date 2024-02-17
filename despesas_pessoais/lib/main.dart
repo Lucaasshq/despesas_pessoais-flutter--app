@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:despesas_pessoais/models/transaction.dart';
 import 'dart:math';
 
+
 main() => runApp(ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
@@ -31,7 +32,6 @@ class ExpensesApp extends StatelessWidget {
           titleTextStyle: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            
           ),
         ),
       ),
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(
             onPressed: () => _openTransactionFormModal(context),
-            icon: const Icon(Icons.add),
+            icon: const Icon(Icons.shop_2),
             color: Colors.white,
           )
         ],
@@ -120,10 +120,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          shape: const CircleBorder(),
-          backgroundColor: Theme.of(context).colorScheme.secondary,
-          onPressed: () => _openTransactionFormModal(context),
-          child: const Icon(Icons.add)),
+        shape: const CircleBorder(),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        onPressed: () => _openTransactionFormModal(context),
+        child: const Icon(Icons.add, size: 25,),
+      ),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterFloat,
     );
