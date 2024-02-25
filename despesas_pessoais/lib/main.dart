@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(
             onPressed: () => _openTransactionFormModal(context),
-            icon: const Icon(Icons.shop_2),
+            icon: const Icon(Icons.add),
             color: Colors.white,
           )
         ],
